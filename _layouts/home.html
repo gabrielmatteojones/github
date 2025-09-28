@@ -2,7 +2,6 @@
 layout: default
 title: Articoli
 ---
-<main>
 
 <style>
   .circle-img {
@@ -27,7 +26,8 @@ title: Articoli
       
       <!-- Colonna immagine -->
       <div class="col-auto d-flex justify-content-center">
-        <img src="/assets/image.png" alt="Immagine Gabriel" class="circle-img shadow-lg">
+        <img src="/assets/image.png" 
+             alt="Immagine Gabriel" class="circle-img shadow-lg">
       </div>
 
       <!-- Colonna titolo -->
@@ -39,56 +39,38 @@ title: Articoli
   </div>
 </div>
 
-<br>
 
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Colonna immagine -->
+      <div class="col-12 col-md-5 mb-4 mb-md-0">
+        <img src="https://via.placeholder.com/500" alt="About Me" class="img-fluid rounded shadow">
+      </div>
 
-<div class="container">
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Organizzazione</th>
-      <th scope="col">Amministrazione</th>
-      <th scope="col">Link</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Jonez</td>
-      <td><a href="{{ site.url }}/dipartimenti/centrale/">Amministrazione Centrale</a></td>
-      <td><a href="{{ site.url }}/jonez/">@AGFO</a></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>AGFO</td>
-      <td><a href="{{ site.url }}/dipartimenti/agfo/">Amministrazione AGFO</a></td>
-      <td><a href="{{ site.url }}/progetti/php/agfo/">@AGFO</a></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>UPID</td>
-      <td><a href="{{ site.url }}/dipartimenti/centrale/seconda/">Seconda Amministrazione</a></td>
-      <td><a href="{{ site.url }}/progetti/php/upid/">@UPID</a></td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Stampa & Comunicazione</td>
-      <td><a href="{{ site.url }}/dipartimenti/stampa/">Dipartimento Stampa</a></td>
-      <td><a href="{{ site.url }}/dipartimenti/stampa/">@Stampa</a></td>
-    </tr>
-  </tbody>
-</table>
-</div>
+      <!-- Colonna testo -->
+      <div class="col-12 col-md-7">
+        <h2 class="fw-bold mb-3">About Me</h2>
+        <p class="fs-5">
+          Ciao! Sono Gabriel, un appassionato di sviluppo web e design.  
+          Mi piace creare progetti eleganti e funzionali utilizzando tecnologie moderne come Bootstrap, HTML5 e CSS3.  
+          Il mio obiettivo è trasformare le idee in esperienze digitali uniche e coinvolgenti.
+        </p>
+        <p class="fs-5">
+          Qui troverai informazioni sui miei progetti, servizi e il mio percorso professionale.  
+          Sono sempre pronto a nuove sfide e collaborazioni interessanti.
+        </p>
+        <a href="#contact" class="btn btn-primary mt-3">Contattami</a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
 
 
-
-
-
-
-<br><div class="bg-dark text-primary px-4 py-5"> <div class="py-5 container"> <h1 class="display-5 fw-bold text-white">Aree Tematiche</h1> <div class="col-lg-6 mx-auto text-white"></div> </div> </div><br>
 
 
 <div class="container my-5">
@@ -101,17 +83,6 @@ title: Articoli
           <h5 class="card-title">Infanzia</h5>
         </div>
       </div>
-      <div class="card shadow mb-3">
-        <div class="text-center">
-          <i class="bi bi-laptop-fill fs-1 mb-2"></i>
-          <h5 class="card-title">Innovazione digitale</h5>
-        </div>
-      </div>
-      <div class="card shadow mb-3">
-        <div class="text-center">
-          <i class="bi bi-people-fill fs-1 mb-2"></i>
-          <h5 class="card-title">Civica</h5>
-        </div>
       </div>
     </div>
 
@@ -123,53 +94,6 @@ title: Articoli
           <h5 class="card-title">Amministrazione</h5>
         </div>
       </div>
-      <div class="card shadow mb-3">
-        <div class="text-center">
-          <i class="bi bi-folder-fill fs-1 mb-2"></i>
-          <h5 class="card-title">FOIA</h5>
-        </div>
-      </div>
-      <div class="card shadow mb-3">
-        <div class="text-center">
-          <i class="bi bi-stars fs-1 mb-2"></i>
-          <h5 class="card-title">Altre</h5>
-        </div>
-      </div>
     </div>
   </div>
 </div>
-
-
-
-<br><div class="bg-dark text-primary px-4 py-5"> <div class="py-5 container"> <h1 class="display-5 fw-bold text-white">Letteratura</h1> <div class="col-lg-6 mx-auto text-white"></div> </div> </div><br>
-
-
-
-<div class="card shadow mb-3">
-  <a href="/lastbook/">
-        <div class="text-center">
-          <i class="bi bi-folder-fill fs-1 mb-2"></i>
-          <h5 class="card-title">Libro che sto leggendo</h5>
-        </div>
-        </a>
-      </div>
-      
-      <div class="card shadow mb-3">
-  <a href="https://gabrielmatteojones.it/cat/libri/">
-        <div class="text-center">
-          <i class="bi bi-folder-fill fs-1 mb-2"></i>
-          <h5 class="card-title">Recensioni Letterarie</h5>
-        </div>
-        </a>
-      </div>
-
-
-
-
-
-
-
-
-
-
-</main>
