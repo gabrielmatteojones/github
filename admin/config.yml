@@ -1,0 +1,135 @@
+backend:
+  name: git-gateway
+  branch: "48891"  # o master, a seconda del tuo repo
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  # COLLEZIONE ARTICOLI
+  - name: "articoli"
+    label: "Articoli"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Categorie", name: "categories", widget: "list" }
+      - { label: "Descrizione", name: "description", widget: "string" }
+      - { label: "Keywords", name: "keywords", widget: "string" }
+      - { label: "Immagine", name: "image", widget: "image" }
+      - { label: "Ref", name: "ref", widget: "string" }
+      - { label: "Autore", name: "author", widget: "string" }
+      - { label: "Lingua", name: "lang", widget: "string" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  # COLLEZIONE PAGINE
+  - name: "pagine"
+    label: "Pagine"
+    folder: "it"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Descrizione", name: "description", required: false, widget: "string" }
+      - { label: "Keywords", name: "keywords", required: false, widget: "string" }
+      - { label: "Immagine", name: "image", required: false, widget: "image" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+      - { label: "Autore", name: "author", widget: "hidden", default: "gabriel" }
+      - { label: "Lingua", name: "lang", required: false, widget: "string" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  # COLLEZIONE VP
+  - name: "vp"
+    label: "VP Pages"
+    folder: "links"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "cartella" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - label: "Link"
+        name: "links"
+        widget: "list"
+        fields:
+          - { label: "Nome", name: "name", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
+
+  # COLLEZIONE DOCUMENTI PUBBLICI
+  - name: "documenti_pubblici"
+    label: "Documenti pubblici"
+    folder: "_doc"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "documento_pubblico/{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "doc" }
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "ID Protocollo", name: "id", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Ultimo aggiornamento", name: "update", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Descrizione breve", name: "descrizionebreve", widget: "text" }
+      - { label: "Descrizione completa", name: "descrizione", widget: "markdown" }
+      - { label: "Documento (file o link)", name: "doc", widget: "file", allow_multiple: false }
+      - label: "Unità Organizzativa responsabile"
+        name: "uo"
+        widget: "object"
+        fields:
+          - { label: "Nome", name: "nome", widget: "string" }
+          - { label: "Link", name: "link", widget: "string", required: false }
+          - { label: "Descrizione", name: "descrizione", widget: "string", required: false }
+      - { label: "Formati disponibili", name: "formati", widget: "list", default: ["PDF"] }
+      - { label: "Licenza distribuzione", name: "licenza", widget: "string", default: "pubblico dominio" }
+  - name: "dipartimenti"
+    label: "Dipartimenti"
+    folder: "pages/dipartimenti"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "amministrazione" }
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "permalink", name: "permalink", widget: "string", default: "/dipartimenti//" }
+      - { label: "Descrizione", name: "description", widget: "text" }
+      
+      - label: "In evidenza"
+        name: "featured"
+        widget: "list"
+        fields:
+          - { label: "Titolo", name: "title", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
+          - { label: "Testo", name: "text", widget: "text" }
+
+      - label: "Amministrazione"
+        name: "amministrazione"
+        widget: "list"
+        fields:
+          - { label: "Titolo", name: "title", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
+          - { label: "Testo", name: "text", widget: "text", required: false }
+          
+  - name: "books"
+    label: "Libri"
+    folder: "_books"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "book" }
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Autore", name: "author", widget: "string" }
+      - { label: "Categoria", name: "category", widget: "string" }
+      - { label: "Appartenenza", name: "ownership", widget: "string" }
+      - { label: "Editore", name: "publisher", widget: "string" }
+      - { label: "Anno", name: "year", widget: "string" }
+      - { label: "Copertina", name: "cover", widget: "image" }
+      - { label: "Descrizione", name: "description", widget: "text" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "lastbook" }
+      - { label: "Permalink", name: "permalink", widget: "string", default: "/lastbook/{{slug}}/" }

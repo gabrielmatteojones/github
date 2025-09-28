@@ -1,0 +1,50 @@
+# Configurazione principale del sito
+environment: "production"
+
+# Impedisce l’indicizzazione del sito dai motori di ricerca
+noindex: true
+
+# Disqus
+disqus:
+
+# Google Analytics
+google_analytics:
+
+# URL del sito
+url: "https://jonez.it"
+baseurl: "/"
+
+# Permalink dei post (usa :author e :title)
+collections:
+  posts:
+    output: true
+    permalink: /posts/:categories/:title/
+  doc:
+    output: true
+    permalink: /FOIA/:name/
+
+
+# Versione Jekyll
+version: v4.0.0
+
+# Sass
+sass:
+  style: :compressed
+
+# Plugin
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-toc
+
+# Escludi questi file dalla build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - AUTHORS
+  - LICENSE
+  - README.md
+  - CNAME
+
+# Informazioni generali del sito
+title: "Jonez Website"
